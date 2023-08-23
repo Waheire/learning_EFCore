@@ -1,0 +1,12 @@
+C:\Projects\c#\PulisherConsole\PublisherDomain\bin\Debug\net6.0\PublisherDomain.deps.json
+C:\Projects\c#\PulisherConsole\PublisherDomain\bin\Debug\net6.0\PublisherDomain.dll
+C:\Projects\c#\PulisherConsole\PublisherDomain\bin\Debug\net6.0\PublisherDomain.pdb
+C:\Projects\c#\PulisherConsole\PublisherDomain\obj\Debug\net6.0\PublisherDomain.csproj.AssemblyReference.cache
+C:\Projects\c#\PulisherConsole\PublisherDomain\obj\Debug\net6.0\PublisherDomain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\c#\PulisherConsole\PublisherDomain\obj\Debug\net6.0\PublisherDomain.AssemblyInfoInputs.cache
+C:\Projects\c#\PulisherConsole\PublisherDomain\obj\Debug\net6.0\PublisherDomain.AssemblyInfo.cs
+C:\Projects\c#\PulisherConsole\PublisherDomain\obj\Debug\net6.0\PublisherDomain.csproj.CoreCompileInputs.cache
+C:\Projects\c#\PulisherConsole\PublisherDomain\obj\Debug\net6.0\PublisherDomain.dll
+C:\Projects\c#\PulisherConsole\PublisherDomain\obj\Debug\net6.0\refint\PublisherDomain.dll
+C:\Projects\c#\PulisherConsole\PublisherDomain\obj\Debug\net6.0\PublisherDomain.pdb
+C:\Projects\c#\PulisherConsole\PublisherDomain\obj\Debug\net6.0\ref\PublisherDomain.dll
