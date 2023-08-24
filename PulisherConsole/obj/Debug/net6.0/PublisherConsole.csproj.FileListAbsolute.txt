@@ -65,3 +65,11 @@ C:\Projects\c#\PulisherConsole\PulisherConsole\obj\Debug\net6.0\refint\Publisher
 C:\Projects\c#\PulisherConsole\PulisherConsole\obj\Debug\net6.0\PublisherConsole.pdb
 C:\Projects\c#\PulisherConsole\PulisherConsole\obj\Debug\net6.0\PublisherConsole.genruntimeconfig.cache
 C:\Projects\c#\PulisherConsole\PulisherConsole\obj\Debug\net6.0\ref\PublisherConsole.dll
+C:\Projects\c#\PulisherConsole\PulisherConsole\bin\Debug\net6.0\Humanizer.dll
+C:\Projects\c#\PulisherConsole\PulisherConsole\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Projects\c#\PulisherConsole\PulisherConsole\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Projects\c#\PulisherConsole\PulisherConsole\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Projects\c#\PulisherConsole\PulisherConsole\bin\Debug\net6.0\System.CodeDom.dll
+C:\Projects\c#\PulisherConsole\PulisherConsole\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Projects\c#\PulisherConsole\PulisherConsole\bin\Debug\net6.0\System.Text.Json.dll
+C:\Projects\c#\PulisherConsole\PulisherConsole\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll

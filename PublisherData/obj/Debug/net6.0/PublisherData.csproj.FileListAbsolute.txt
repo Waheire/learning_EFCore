@@ -13,3 +13,5 @@ C:\Projects\c#\PulisherConsole\PublisherData\obj\Debug\net6.0\PublisherData.dll
 C:\Projects\c#\PulisherConsole\PublisherData\obj\Debug\net6.0\refint\PublisherData.dll
 C:\Projects\c#\PulisherConsole\PublisherData\obj\Debug\net6.0\PublisherData.pdb
 C:\Projects\c#\PulisherConsole\PublisherData\obj\Debug\net6.0\ref\PublisherData.dll
+C:\Projects\c#\PulisherConsole\PublisherData\bin\Debug\net6.0\PublisherData.runtimeconfig.json
+C:\Projects\c#\PulisherConsole\PublisherData\obj\Debug\net6.0\PublisherData.genruntimeconfig.cache

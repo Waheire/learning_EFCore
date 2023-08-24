@@ -4,22 +4,27 @@ using PublisherData;
 using PublisherDomain;
 using System.Diagnostics.Metrics;
 
-using (PubContext context = new PubContext()) 
-{
-    context.Database.EnsureCreated();
-}
+
+PubContext context = new PubContext();
+//using (PubContext context = new PubContext()) 
+//{
+//  context.Database.EnsureCreated();
+//}
 
 //GetAuthors();
 //AddAuthors();
 //GetAuthors();
-AddAuthorWithBook();
-GetAuthorsWithBook();
+//AddAuthorWithBook();
+//GetAuthorsWithBook();
 
+//QueryFilters();
+//SkipAndTakeAuthors();
 
+QueryAggregate();
 
 void GetAuthors() 
 {
-    using var context = new PubContext();
+    //using var context = new PubContext();
     var authors = context.Authors.ToList();
     foreach (var author in authors) 
     {
@@ -31,8 +36,8 @@ void GetAuthors()
 {
     var author = new Author
     {
-        FirstName = "Rahab",
-        LastName = "Wanjiku",
+        FirstName = "Lynn",
+        LastName = "Frank",
     };
     using var context = new PubContext();
     context.Authors.Add(author);
@@ -65,7 +70,7 @@ void AddAuthorWithBook()
 
 void GetAuthorsWithBook()
 {
-    using var context = new PubContext();
+    //using var context = new PubContext();
     var authors = context.Authors.Include(a => a.Books).ToList();
     foreach (var author in authors) 
     {
@@ -76,3 +81,44 @@ void GetAuthorsWithBook()
         }
     }
 }
+
+void QueryFilters() 
+{
+    //var name = "Arthur";
+    //var authors = context.Authors.Where(s => s.FirstName == name).ToList();
+
+    var filter = "l%";
+    var authors = context.Authors
+        .Where(a => EF.Functions.Like(a.LastName, filter)).ToList();
+}
+
+void SkipAndTakeAuthors() 
+{
+    var groupSize = 2;
+    for (var i = 0; i < 5; i++)
+    {
+        var authors = context.Authors.Skip(groupSize * i).Take(groupSize).ToList();
+        Console.WriteLine($"Group {i}");
+        foreach (var author in authors) 
+        {
+            Console.WriteLine($"{author.FirstName} {author.LastName}");
+        }
+    }
+}
+
+void sortAuthors () 
+{
+    var authorsByLastName = context.Authors
+        .OrderBy(a => a.LastName)
+        .ThenBy(a => a.FirstName)
+        .ToList();
+    authorsByLastName.ForEach(a => Console.WriteLine(a.LastName + " " + a.FirstName));
+}
+
+void QueryAggregate() 
+{
+   var author = context.Authors.OrderByDescending(a => a.FirstName)
+        .FirstOrDefault(a => a.LastName == "Wanjiku");
+}
+
+
