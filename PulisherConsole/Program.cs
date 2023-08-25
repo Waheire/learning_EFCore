@@ -11,8 +11,9 @@ PubContext context = new PubContext();
 //  context.Database.EnsureCreated();
 //}
 
-//GetAuthors();
+
 //AddAuthors();
+
 //GetAuthors();
 //AddAuthorWithBook();
 //GetAuthorsWithBook();
@@ -20,7 +21,13 @@ PubContext context = new PubContext();
 //QueryFilters();
 //SkipAndTakeAuthors();
 
-QueryAggregate();
+//QueryAggregate();
+//RetrieveAndUpdateAuthor();
+//RetrieveAndUpdateMultipleAuthors();
+//DeleteAuthor();
+//InsertMultipleAuthors();
+//GetAuthors();
+
 
 void GetAuthors() 
 {
@@ -36,8 +43,8 @@ void GetAuthors()
 {
     var author = new Author
     {
-        FirstName = "Lynn",
-        LastName = "Frank",
+        FirstName = "Julie",
+        LastName = "Lerman",
     };
     using var context = new PubContext();
     context.Authors.Add(author);
@@ -66,6 +73,33 @@ void AddAuthorWithBook()
     context.Authors.Add(author);
     context.SaveChanges();
 
+}
+
+void RetrieveAndUpdateAuthor() 
+{
+    var author = context.Authors.FirstOrDefault(a => a.FirstName == "Julie" && a.LastName=="Lerman");
+    if (author != null)
+    {
+        author.FirstName = "Julia";
+        context.SaveChanges();
+    }
+    else 
+    {
+        Console.WriteLine("Author does not exist");
+    }
+}
+
+void RetrieveAndUpdateMultipleAuthors() 
+{
+    var LermanAuthors = context.Authors.Where(a => a.LastName == "Lehrman").ToList();
+    foreach (var author in LermanAuthors) 
+    {
+       author.LastName = "lerman";
+    }
+    Console.WriteLine("Before" + context.ChangeTracker.DebugView.ShortView);
+    context.ChangeTracker.DetectChanges();
+    Console.WriteLine("After"+ context.ChangeTracker.DebugView.LongView);
+    context.SaveChanges();
 }
 
 void GetAuthorsWithBook()
@@ -115,10 +149,28 @@ void sortAuthors ()
     authorsByLastName.ForEach(a => Console.WriteLine(a.LastName + " " + a.FirstName));
 }
 
-void QueryAggregate() 
+void QueryAggregate()
 {
-   var author = context.Authors.OrderByDescending(a => a.FirstName)
-        .FirstOrDefault(a => a.LastName == "Wanjiku");
+    var author = context.Authors.OrderByDescending(a => a.FirstName)
+         .FirstOrDefault(a => a.LastName == "Wanjiku");
 }
 
+void DeleteAuthor() 
+{
+    var extraJL = context.Authors.Find(10);
+    if (extraJL != null) 
+    {
+        context.Authors.Remove(extraJL);
+        context.SaveChanges();
+    }
+}
 
+void InsertMultipleAuthors()
+{
+    context.Authors.AddRange(new Author { FirstName ="Ruth", LastName="Ozeki"},
+        new Author { FirstName = "Sofia", LastName = "Segovia" },
+        new Author { FirstName = "Ursula K.", LastName = "LeGuin" },
+        new Author { FirstName = "Hugh", LastName = "Howey" },
+        new Author { FirstName = "Isabelle", LastName = "Allende" });
+    context.SaveChanges();
+}
